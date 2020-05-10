@@ -4,11 +4,13 @@ module.exports = {
   async index (request, response) {
     const { page = 1 } = request.params
     const customersByPage = 20
-
-    return response.json(await connection('customers')
+    const customers = await connection('customers')
       .limit(customersByPage)
       .offset((page - 1) * customersByPage)
-      .select('*'))
+      .select('*')
+    const [count] = await connection('customers').count()
+    response.header('X-Total-Count', count['count(*)'])
+    return response.json(customers)
   },
   async read (request, response) {
     const { id } = request.params
