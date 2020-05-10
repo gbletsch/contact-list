@@ -42,6 +42,8 @@
 * connect to db: 55 min
 * refact to controllers: 1h 1 min
 * 1:05 - controllers para os incidents
+* 1:10 - Authorization no header
+* 1:25 - paginação
 
 # Aula 3
 * limpando os arquivos: 4 min
