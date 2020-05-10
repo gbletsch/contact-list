@@ -14,12 +14,12 @@
 
 ## Aula 2:
 ### Mudar para a pasta backend
-* Métodos HTTP: 8 min
-* Tipos de parâmetros: 14 min
-* Use JSON nas requisições: 22 min
-* Instalar nodemon: 23 min
-* Banco de dados: 28 min
-  * Knex: 30 min
+* 0:08 - Métodos HTTP: 8 min
+* 0:14 - Tipos de parâmetros: 14 min
+* 0:22 - Use JSON nas requisições: 22 min
+* 0:23 - Instalar nodemon: 23 min
+* 0:28 - Banco de dados: 28 min
+  * 0:30 - Knex: 30 min
   ```shell
   npm install knex
   ```
@@ -32,7 +32,7 @@
   npx knex init
   ```
 
-* Criando pasta /src: 31 min
+* 0:31 - Criando pasta /src: 31 min
 * Criando routes.js: 33 min
 * Criando pasta database: 35 min
 * Pensar nas entidades e funcionalidades: 35 min
@@ -44,6 +44,8 @@
 * 1:05 - controllers para os incidents
 * 1:10 - Authorization no header
 * 1:25 - paginação
+* 1:30 - join
+* 1:33 - CORS
 
 # Aula 3
 * limpando os arquivos: 4 min
