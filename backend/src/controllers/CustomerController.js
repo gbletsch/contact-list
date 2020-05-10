@@ -1,6 +1,23 @@
 const connection = require('../database/connection')
 
 module.exports = {
+  async index (request, response) {
+    const { page = 1 } = request.params
+    const customersByPage = 20
+
+    return response.json(await connection('customers')
+      .limit(customersByPage)
+      .offset((page - 1) * customersByPage)
+      .select('*'))
+  },
+  async read (request, response) {
+    const { id } = request.params
+    customer = await connection('customers')
+      .where({ id })
+      .select('*')
+      .first()
+    response.json(customer)
+  },
   async create (request, response) {
     const { name } = request.body 
     return response.json({
@@ -9,15 +26,12 @@ module.exports = {
         })
     })
   },
-  async listAll (request, response) {
-    return response.json(await connection('customers').select('*'))
-  },
   async update (request, response) {
     const id = request.params.id
     const { name } = request.body
     return response.json({
       rows_affected: await connection('customers')
-        .where('id', '=', id)
+        .where({ id })
         .update({
           name
         })
